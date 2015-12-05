@@ -12,11 +12,11 @@ CREATE TABLE Users (
 
 CREATE TABLE PaymentTypes (
    id serial PRIMARY KEY,
-   payment_type text,
    username text REFERENCES Users(username),
+   payment_type text,
+   is_primary_payment_method boolean,
    time_added TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
-   time_last_used TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
-   is_primary_payment_method boolean
+   time_last_used TIMESTAMP DEFAULT LOCALTIMESTAMP(0)
 );
 
 CREATE TABLE Paypals (
@@ -41,9 +41,9 @@ CREATE TABLE Riders (
    id serial PRIMARY KEY,
    first_name text,
    last_name text,
-   is_in_ride boolean,
+   phone_number text,
    rating integer,
-   phone_number text
+   is_in_ride boolean
 );
 
 
@@ -52,10 +52,10 @@ CREATE TABLE Requests (
    rider_id integer REFERENCES Riders(id),
    pickup_location text,
    destination_location text,
-   request_fullfilled boolean,
-   cancelled boolean,
+   time_requested TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
    surge_multiplier integer,
-   time_requested TIMESTAMP DEFAULT LOCALTIMESTAMP(0)
+   request_fullfilled boolean,
+   cancelled boolean
 );
 
 
@@ -63,9 +63,9 @@ CREATE TABLE Drivers (
    id serial PRIMARY KEY,
    first_name text,
    last_name text,
-   is_turned_on boolean,
+   phone_number text,
    rating text,
-   phone_number text
+   is_turned_on boolean
 );
 
 
@@ -73,13 +73,14 @@ CREATE TABLE Rides (
    id serial PRIMARY KEY,
    request_id integer REFERENCES Requests(id),
    driver_id integer REFERENCES Drivers(id),
+   estimated_time_of_arrival text,
+   distance text,
    price integer,
    driver_rating text,
+   rider_rating text,
    is_completed boolean,
-   distance text,
    time TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
-   time_fullfilled TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
-   estimated_time_of_arrival text
+   time_fullfilled TIMESTAMP DEFAULT LOCALTIMESTAMP(0)
 );
 
 
