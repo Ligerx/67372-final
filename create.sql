@@ -78,12 +78,12 @@ CREATE TABLE Rides (
    id serial PRIMARY KEY,
    request_id integer REFERENCES Requests(id),
    driver_username text REFERENCES Drivers(username),
-   estimated_time_of_arrival text,
-   distance text, -- total distance of trip
+   estimated_time_of_arrival integer, -- integer # of min till arrival
+   distance decimal, -- total distance of trip in miles
    price decimal,
-   driver_rating text,
-   rider_rating text,
+   driver_rating decimal,
+   rider_rating decimal,
    is_completed boolean,
-   time TIMESTAMP DEFAULT LOCALTIMESTAMP(0), -- total time of trip
+   time integer, -- total time of trip in minutes
    time_fullfilled TIMESTAMP DEFAULT LOCALTIMESTAMP(0) -- time trip finished
 );
