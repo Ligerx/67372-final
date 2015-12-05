@@ -1,6 +1,15 @@
 alex,Rider,password
+jacob,Rider,password
+will,Rider,password
 lois,Rider,password
+ethan,Rider,password
 ryan,Driver,password
 john,Driver,password
+emma,Driver,password
+olivia,Driver,password
+david,Driver,password
 raja,CustomerSupportSpecialist,password
 weinberg,CustomerSupportSpecialist,password
+grace,CustomerSupportSpecialist,password
+luke,CustomerSupportSpecialist,password
+lilly,CustomerSupportSpecialist,password

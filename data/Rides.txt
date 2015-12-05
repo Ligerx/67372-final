@@ -1,0 +1,5 @@
+1,1,ryan,5,7.3,10.50,5,5,true,15,yesterday
+2,2,john,13,2.1,5.26,5,3,true,4,yesterday
+3,3,emma,2,16,25.63,5,5,true,25,yesterday
+4,5,emma,4,7,10.25,5,5,true,15,now
+5,6,david,6,14,20,4,5,true,20,now

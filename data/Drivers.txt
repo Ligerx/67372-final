@@ -1,0 +1,5 @@
+ryan,Ryan,Sickles,8725338022,5,true
+john,John,Cena,6605419961,5,true
+emma,Emma,Watson,3719026582,4.9,true
+olivia,Olivia,Hana,0770673088,4.1,false
+david,David,Joestar,2927517417,4,false

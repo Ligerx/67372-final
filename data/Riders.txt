@@ -1,0 +1,5 @@
+alex,Alex,Wang,3914228274,5,true
+jacob,Jacob,Johnson,8470973945,4,false
+will,Will,Williams,4903688307,3.5,false
+lois,Lois,Yang,7878016052,3,false
+ethan,Ethan,Brooks,7820335698,4.8,true
