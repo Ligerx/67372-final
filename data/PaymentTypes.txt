@@ -1,0 +1,6 @@
+1,alex,Paypal,false,yesterday,now
+2,alex,CreditCard,false,yesterday,now
+3,alex,CreditCard,true,yesterday,now
+4,lois,CreditCard,true,yesterday,now
+5,ryan,Paypal,true,yesterday,now
+6,john,Paypal,true,yesterday,now
