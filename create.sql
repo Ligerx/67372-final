@@ -46,8 +46,8 @@ CREATE TABLE Riders (
    first_name text,
    last_name text,
    phone_number text,
-   rating integer,
-   is_in_ride boolean -- if the user is currently on an Uber ride
+   rating decimal,
+   is_in_ride boolean DEFAULT FALSE -- if the user is currently on an Uber ride
 );
 
 
@@ -57,7 +57,7 @@ CREATE TABLE Requests (
    pickup_location text,
    destination_location text,
    time_requested TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
-   surge_multiplier integer DEFAULT 1, -- surge normally at 1x multiplier
+   surge_multiplier decimal DEFAULT 1, -- surge normally at 1x multiplier
    request_fullfilled boolean,
    cancelled boolean
 );
@@ -80,7 +80,7 @@ CREATE TABLE Rides (
    driver_username text REFERENCES Drivers(username),
    estimated_time_of_arrival text,
    distance text, -- total distance of trip
-   price integer,
+   price decimal,
    driver_rating text,
    rider_rating text,
    is_completed boolean,
