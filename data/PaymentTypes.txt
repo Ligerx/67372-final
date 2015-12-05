@@ -2,5 +2,9 @@
 2,alex,CreditCard,false,yesterday,now
 3,alex,CreditCard,true,yesterday,now
 4,lois,CreditCard,true,yesterday,now
-5,ryan,Paypal,true,yesterday,now
-6,john,Paypal,true,yesterday,now
+5,lois,Paypal,true,yesterday,now
+6,ryan,Paypal,true,yesterday,now
+7,ryan,CreditCard,true,yesterday,now
+8,john,Paypal,true,yesterday,now
+9,john,Paypal,true,yesterday,now
+10,john,CreditCard,true,yesterday,now
