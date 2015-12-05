@@ -1,0 +1,5 @@
+Alex,rider,password
+Lois,rider,password
+Ryan,driver,password
+Raja,customerSupportSpecialist,password
+Weinberg,customerSupportSpecialist,password
