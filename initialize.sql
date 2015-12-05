@@ -1,26 +1,26 @@
-\copy Users(username, type, password)
+\copy Users
 FROM 'data/Users.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy PaymentTypes
 FROM 'data/PaymentTypes.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy Paypals
 FROM 'data/Paypals.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy CreditCards
 FROM 'data/CreditCards.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy CustomerServiceSpecialists
 FROM 'data/CustomerServiceSpecialists.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy Riders
 FROM 'data/Riders.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy Requests
 FROM 'data/Requests.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy Drivers
 FROM 'data/Drivers.txt' DELIMITER ',' CSV
 
-\copy Users(username, type, password)
+\copy Rides
 FROM 'data/Rides.txt' DELIMITER ',' CSV
