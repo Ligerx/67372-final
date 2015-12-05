@@ -20,25 +20,26 @@ CREATE TABLE PaymentTypes (
 );
 
 CREATE TABLE Paypals (
-   id serial PRIMARY KEY,
+   -- subclass should have no normal primary key, only reference to parent
+   payment_type_id integer PRIMARY KEY REFERENCES PaymentTypes(id),
    paypal_num text
 );
 
 CREATE TABLE CreditCards (
-   id serial PRIMARY KEY,
+   payment_type_id integer PRIMARY KEY REFERENCES PaymentTypes(id),
    credit_card_num text,
    credit_card_type text
 );
 
 CREATE TABLE CustomerServiceSpecialists (
-   id serial PRIMARY KEY,
+   username text PRIMARY KEY REFERENCES Users(username),
    first_name text,
    last_name text
 );
 
 
 CREATE TABLE Riders (
-   id serial PRIMARY KEY,
+   username text PRIMARY KEY REFERENCES Users(username),
    first_name text,
    last_name text,
    phone_number text,
@@ -49,7 +50,7 @@ CREATE TABLE Riders (
 
 CREATE TABLE Requests (
    id serial PRIMARY KEY,
-   rider_id integer REFERENCES Riders(id),
+   rider_username text REFERENCES Riders(username),
    pickup_location text,
    destination_location text,
    time_requested TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
@@ -60,7 +61,7 @@ CREATE TABLE Requests (
 
 
 CREATE TABLE Drivers (
-   id serial PRIMARY KEY,
+   username text PRIMARY KEY REFERENCES Users(username),
    first_name text,
    last_name text,
    phone_number text,
@@ -72,7 +73,7 @@ CREATE TABLE Drivers (
 CREATE TABLE Rides (
    id serial PRIMARY KEY,
    request_id integer REFERENCES Requests(id),
-   driver_id integer REFERENCES Drivers(id),
+   driver_username text REFERENCES Drivers(username),
    estimated_time_of_arrival text,
    distance text,
    price integer,
@@ -82,5 +83,3 @@ CREATE TABLE Rides (
    time TIMESTAMP DEFAULT LOCALTIMESTAMP(0),
    time_fullfilled TIMESTAMP DEFAULT LOCALTIMESTAMP(0)
 );
-
-
