@@ -79,11 +79,17 @@ CREATE TABLE Rides (
    request_id integer REFERENCES Requests(id),
    driver_username text REFERENCES Drivers(username),
    estimated_time_of_arrival integer, -- integer # of min till arrival
+   is_completed boolean
+);
+
+
+CREATE TABLE RideInformation (
+   -- composition uses the parent's id
+   ride_id integer PRIMARY KEY REFERENCES Rides(id),
    distance decimal, -- total distance of trip in miles
    price decimal,
-   driver_rating decimal,
-   rider_rating decimal,
-   is_completed boolean,
+   rider_rating decimal, -- CONSIDER REMOVING
+   driver_rating decimal, -- CONSIDER REMOVING
    time integer, -- total time of trip in minutes
    time_fullfilled TIMESTAMP DEFAULT LOCALTIMESTAMP(0) -- time trip finished
 );

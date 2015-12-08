@@ -15,3 +15,5 @@
 \copy Drivers FROM './data/Drivers.txt' DELIMITER ',' CSV
 
 \copy Rides FROM './data/Rides.txt' DELIMITER ',' CSV
+
+\copy RideInformation FROM './data/RideInformation.txt' DELIMITER ',' CSV
