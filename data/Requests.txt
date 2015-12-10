@@ -1,6 +1,6 @@
-1,alex,"3017 Oxford Court Clermont, FL 34711","1000 Oxford Court Clermont, FL 34711",yesterday,1,true,false
-2,jacob,"7408 Grant Avenue Wilson, NC 27893","500 Wilco St Wilson, NC 27893",now,1.5,true,false
-3,will,"3027 Clay Street Fresno, CA 93706","1234 Stone Rd Fresno, CA 93706",yesterday,4.8,true,false
-4,ethan,"6075 Penn Street Lynn, MA 01902","6623 Sky Blvd Lynn, MA 01902",yesterday,6,false,true
-5,ethan,"6075 Penn Street Lynn, MA 01902","6623 Sky Blvd Lynn, MA 01902",yesterday,1,true,false
-6,ethan,"6623 Sky Blvd Lynn, MA 01902","6075 Penn Street Lynn, MA 01902",yesterday,2,true,false
+alex,"3017 Oxford Court Clermont, FL 34711","1000 Oxford Court Clermont, FL 34711",yesterday,1,true,false
+jacob,"7408 Grant Avenue Wilson, NC 27893","500 Wilco St Wilson, NC 27893",now,1.5,true,false
+will,"3027 Clay Street Fresno, CA 93706","1234 Stone Rd Fresno, CA 93706",yesterday,4.8,true,false
+ethan,"6075 Penn Street Lynn, MA 01902","6623 Sky Blvd Lynn, MA 01902",yesterday,6,false,true
+ethan,"6075 Penn Street Lynn, MA 01902","6623 Sky Blvd Lynn, MA 01902",yesterday,1,true,false
+ethan,"6623 Sky Blvd Lynn, MA 01902","6075 Penn Street Lynn, MA 01902",yesterday,2,true,false
