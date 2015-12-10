@@ -9,32 +9,14 @@ credit_card_type = 'Discover'
 is_primary_payment_method = False
 
 
-
-# REMOVE THIS
-def new_user(first_name, last_name, email):
-    tmpl = '''
-        INSERT INTO Users (first_name, last_name, email)
-        VALUES(%s, %s, %s)
-        RETURNING uid; -- for convenience
-    '''
-    cmd = cur.mogrify(tmpl, (first_name, last_name, email))
-    print_cmd(cmd)
-    cur.execute(cmd)
-    result = cur.fetchall()[0][0] # just get the id of the new user
-
-    print(first_name + ' ' + last_name + 'has been added (id: ' + str(result) + ')')
-# REMOVE THIS
-
-
-
 def add_payment_method():
     template = '''
-        INSERT INTO PaymentTypes (username, payment_type, credit_card_num, credit_card_type, is_primary_payment_method)
-        VALUES (%s, %s, %s, %s, %s)
+        INSERT INTO PaymentTypes (username, payment_type, is_primary_payment_method)
+        VALUES (%s, %s, %s)
         RETURNING id; -- get id to use for child tables
     '''
 
-    cmd = cur.mogrify(template, (username, payment_type, credit_card_num, credit_card_type, is_primary_payment_method))
+    cmd = cur.mogrify(template, (username, payment_type, is_primary_payment_method))
     print(cmd.decode('utf-8')) # show resulting SQL statement
 
     cur.execute(cmd)
@@ -42,6 +24,11 @@ def add_payment_method():
 
     print(str(result))
 
+
+
+#        INSERT INTO PaymentTypes (username, payment_type, credit_card_num, credit_card_type, is_primary_payment_method)
+
+#    cmd = cur.mogrify(template, (username, payment_type, credit_card_num, credit_card_type, is_primary_payment_method))
 
 
 
