@@ -14,7 +14,7 @@ WHERE rider_username='alex';
 
 SELECT *
 FROM Drivers
-ORDER BY DESC
+ORDER BY rating DESC
 LIMIT 1;
 
 \echo -----------------------------------------------------------------
