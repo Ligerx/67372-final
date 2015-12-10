@@ -25,7 +25,7 @@ LIMIT 1;
 SELECT *
 FROM Rides as ride
 INNER JOIN Requests as req
-ON ride.request_id = req.id
+ON ride.request_id = req.id;
 INNER Join Riders as rider
 ON rider.username = req.rider_username
 WHERE req.request_fullfilled = true AND ride.is_completed = true;
