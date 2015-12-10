@@ -1,15 +1,20 @@
 import psycopg2
 import sys
 
+
 # Hard coded values
 username = 'alex'
 payment_type = 'CreditCard'
+is_primary_payment_method = False
 credit_card_num = '6011096166450496'
 credit_card_type = 'Discover'
-is_primary_payment_method = False
 
 
-def add_payment_method():
+def add_new_credit_card():
+    payment_type_id = create_payment_type()
+    create_credit_card(payment_type_id)
+
+def create_payment_type():
     template = '''
         INSERT INTO PaymentTypes (username, payment_type, is_primary_payment_method)
         VALUES (%s, %s, %s)
@@ -20,16 +25,21 @@ def add_payment_method():
     print(cmd.decode('utf-8')) # show resulting SQL statement
 
     cur.execute(cmd)
-    result = cur.fetchall()[0]
+    new_payment_type_id = cur.fetchall()[0][0]
 
-    print(str(result))
+    print('Newly inserted PaymentType id = ' + str(new_payment_type_id))
+    return new_payment_type_id
 
+def create_credit_card(payment_type_id):
+    template = '''
+        INSERT INTO CreditCards (payment_type_id, credit_card_num, credit_card_type)
+        VALUES (%s, %s, %s);
+    '''
 
+    cmd = cur.mogrify(template, (payment_type_id, credit_card_num, credit_card_type))
+    print(cmd.decode('utf-8')) # show resulting SQL statement
 
-#        INSERT INTO PaymentTypes (username, payment_type, credit_card_num, credit_card_type, is_primary_payment_method)
-
-#    cmd = cur.mogrify(template, (username, payment_type, credit_card_num, credit_card_type, is_primary_payment_method))
-
+    cur.execute(cmd)
 
 
 if __name__ == '__main__':
@@ -49,8 +59,8 @@ if __name__ == '__main__':
         conn.autocommit = True
         cur = conn.cursor()
 
-        # CALL METHOD
-        add_payment_method()
+        #### CALL METHOD HERE
+        add_new_credit_card()
 
         # Finally close the db connection
         cur.close()
