@@ -22,10 +22,13 @@ LIMIT 1;
 \echo -----------------------------------------------------------------
 \echo
 
-SELECT *
-FROM Rides as ride
-INNER JOIN Requests as req
-ON ride.request_id = req.id;
+SELECT req.rider_username, req.pickup_location, ride.driver_username, ride.is_completed
+FROM Requests as req
+INNER JOIN Rides as ride
+ON ride.request_id = req.id
 INNER Join Riders as rider
 ON rider.username = req.rider_username
-WHERE req.request_fullfilled = true AND ride.is_completed = true;
+INNER Join RideInformation as Rideinfo
+ON Rideinfo.ride_id = ride.id
+WHERE req.request_fullfilled = true AND ride.is_completed = true AND req.rider_username = 'ethan'
+ORDER BY Rideinfo.time_fullfilled DESC;
