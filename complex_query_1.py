@@ -1,3 +1,6 @@
+# As a Rider, I want to set my payment method (credit card)
+# so that I can pay for my rides
+
 import psycopg2
 import sys
 
