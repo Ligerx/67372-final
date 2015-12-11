@@ -34,8 +34,8 @@ WHERE driver_username='ryan';
 \echo
 
 
-INSERT INTO Requests (id, rider_username, pickup_location, destination_location, surge_multiplier, request_fullfilled, cancelled)
-VALUES (7,'lois','5000 Forbes Avenue','1000 Morewood Avenue',1, false, false);
+INSERT INTO Requests (rider_username, pickup_location, destination_location, surge_multiplier, request_fullfilled, cancelled)
+VALUES ('lois','5000 Forbes Avenue','1000 Morewood Avenue',1, false, false);
 
 \echo -----------------------------------------------------------------
 \echo  * 5. Cancel ride request

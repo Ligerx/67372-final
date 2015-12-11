@@ -1,4 +1,5 @@
-#As a driver I want to be able to pick a ride I want to accept in order to make the most money
+# As a driver I want to be able to pick a ride I want to accept in order to make the most money
+
 import psycopg2
 import sys
 
@@ -41,10 +42,7 @@ def select_rider_from_list_and_create_ride():
 		print(cmd.decode('utf-8')) # show resulting SQL statement
 
 		cur.execute(cmd)
-		new_ride = cur.fetchall()
-		print('Newly inserted Ride = ' + str(new_ride))
-		return new_ride
-
+		print('Inserted new Rider')
 
 
 if __name__ == '__main__':
