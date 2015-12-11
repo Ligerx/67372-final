@@ -10,9 +10,13 @@ credit_card_num = '6011096166450496'
 credit_card_type = 'Discover'
 
 
-def add_new_credit_card():
+def add_new_payment_method():
     payment_type_id = create_payment_type()
-    create_credit_card(payment_type_id)
+
+    if 'CreditCard' == payment_type:
+        create_credit_card(payment_type_id)
+    elif 'Paypal' == payment_type:
+        create_paypal(payment_type_id)
 
 def create_payment_type():
     template = '''
@@ -41,6 +45,10 @@ def create_credit_card(payment_type_id):
 
     cur.execute(cmd)
 
+def create_paypal(payment_type_id):
+    # mock function
+    return
+
 
 if __name__ == '__main__':
     try:
@@ -60,7 +68,7 @@ if __name__ == '__main__':
         cur = conn.cursor()
 
         #### CALL METHOD HERE
-        add_new_credit_card()
+        add_new_payment_method()
 
         # Finally close the db connection
         cur.close()
